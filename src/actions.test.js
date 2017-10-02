@@ -1,15 +1,21 @@
-import { createTodo, toggleTodo, filterTodos} from "./actions";
-import {CREATE_TODO, TOGGLE_TODO, FILTER_TODOS} from "./actions";
+import { createTodo, toggleTodo, filterTodos } from "./actions";
+import { CREATE_TODO, TOGGLE_TODO, FILTER_TODOS } from "./actions";
 
-
-describe("CREATE_TODO", function () {
-    test("creates a new todo - action", function () {
-        expect(createTodo("TEST")).toEqual({type:CREATE_TODO, payload:"TEST"})
-    })
-    test("toggle - action", function () {
-        expect(toggleTodo(1)).toEqual({type:TOGGLE_TODO, payload:1})
-    })
-    test("filter - action", function () {
-        expect(filterTodos("completed")).toEqual({type:FILTER_TODOS, payload:"completed"})
-    })
-  })
+describe("CREATE_TODO", function() {
+  test("creates a new todo - action", function() {
+    expect(createTodo("TEST")).toEqual({ type: CREATE_TODO, payload: "TEST" });
+  });
+});
+describe("toggle", function() {
+  test("toggle - action", function() {
+    expect(toggleTodo(1)).toEqual({ type: TOGGLE_TODO, payload: 1 });
+  });
+});
+describe("Fiter", function() {
+  test("filter - action", function() {
+    expect(filterTodos("completed")).toEqual({
+      type: FILTER_TODOS,
+      payload: "completed"
+    });
+  });
+});
